@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://zarlyk-portfolio.pages.dev/sitemap.xml
