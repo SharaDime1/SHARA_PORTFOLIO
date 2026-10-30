@@ -1,4 +1,27 @@
 (() => {
+  const contactTrigger = document.querySelector('#contact-choice-trigger');
+  const contactDialog = document.querySelector('#contact-choice');
+  if (contactDialog && typeof contactDialog.showModal === 'function') {
+    const choices = document.querySelector('#contact-choice-links');
+    const contactLinks = [...document.querySelectorAll('#contact .social-button')];
+    ['WhatsApp', 'Telegram', 'Instagram'].forEach(name => {
+      const link = contactLinks.find(item => item.querySelector('.social-name').textContent === name);
+      if (link) choices.append(link.cloneNode(true));
+    });
+    contactTrigger.setAttribute('aria-haspopup', 'dialog');
+    contactTrigger.setAttribute('aria-controls', 'contact-choice');
+    contactTrigger.addEventListener('click', event => {
+      event.preventDefault();
+      contactDialog.showModal();
+    });
+    contactDialog.querySelector('.dialog-close').addEventListener('click', () => contactDialog.close());
+    contactDialog.addEventListener('click', event => {
+      const bounds = contactDialog.getBoundingClientRect();
+      if (event.target === contactDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) contactDialog.close();
+      if (event.target.closest('a')) contactDialog.close();
+    });
+    contactDialog.addEventListener('close', () => contactTrigger.focus({ preventScroll: true }));
+  }
   const button = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#navigation');
   document.documentElement.classList.add('menu-ready');
