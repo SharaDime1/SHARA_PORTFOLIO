@@ -23,3 +23,12 @@
 .hero-foot>.hero-offer{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;max-width:none;font-size:13px;line-height:1.9;letter-spacing:0}.hero-offer strong{font-weight:600;background:#e6ebd8;border-radius:3px;padding:3px 6px;white-space:nowrap}.hero-offer>span{white-space:nowrap}.hero-offer .offer-divider{color:#82954e}
 @media(max-width:760px){.hero-foot{flex-wrap:wrap;gap:12px 20px}.hero-foot>.hero-offer{font-size:12px}}
 @media(max-width:520px){.hero-foot>.hero-offer{width:100%;gap:2px 6px}.hero-foot{margin-top:30px}}
+
+/* Personal music project */
+.jazz{background:#e4d8cd}
+.project-jazz{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.jazz-details{padding:20px 24px}
+.jazz-details .project-heading{align-items:flex-start;flex-direction:column;margin-top:0;gap:16px}
+.jazz-details h3{font-size:clamp(25px,2.5vw,36px);line-height:1.2}
+.jazz-details p{font-size:14px;line-height:1.8;color:var(--muted);margin:22px 0 28px;max-width:440px}
+@media(max-width:760px){.project-jazz{grid-template-columns:1fr;gap:0}.jazz-details{padding:0}.jazz-details .project-heading{margin-top:19px;gap:12px}.jazz-details h3{font-size:25px}.jazz-details p{font-size:13px;margin:14px 0 20px;max-width:none}}
